@@ -1,0 +1,6 @@
+services:
+  divante_asset_unicode_name.test:
+        class: Divante\AssetUnicodeNameBundle\EventListener\AssetListener
+        tags:
+            - { name: kernel.event_listener, event: pimcore.asset.preUpdate, method: setUnicodeName }
+            - { name: kernel.event_listener, event: pimcore.asset.preAdd, method: setUnicodeName }
